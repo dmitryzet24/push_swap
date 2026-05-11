@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 18:24:44 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/11 21:14:32 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/11 21:22:32 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ t_stack	*ft_stacknew(int value, int index)
 	new->prev = NULL;
 	return (new);
 }
+
 void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack		*last;
+
 	if (stack == NULL || new == NULL)
 		return ;
 	if (*stack == NULL)
@@ -47,6 +49,7 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 void	ft_print_stack(t_stack *stack)
 {
 	t_stack		*current;
+
 	current = stack;
 	while (current->next != stack && current->next)
 	{

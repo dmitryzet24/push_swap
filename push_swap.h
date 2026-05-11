@@ -6,16 +6,16 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/11 21:02:37 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/11 21:22:40 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include "libft/libft.h"
 
 typedef struct s_stack
 {
