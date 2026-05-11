@@ -6,13 +6,17 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/11 18:13:52 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/11 21:02:37 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-//comment
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft/libft.h"
+
 typedef struct s_stack
 {
 	int					value;
@@ -21,5 +25,9 @@ typedef struct s_stack
 	struct s_stack		*next;
 	struct s_stack		*prev;
 }	t_stack;
+
+t_stack		*ft_stacknew(int content, int index);
+void		ft_stackadd_back(t_stack **stack, t_stack *new);
+void		ft_print_stack(t_stack *stack);
 
 #endif
