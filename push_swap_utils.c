@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 18:24:44 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 14:05:54 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 15:16:54 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,10 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	(*stack)->prev = new;
 }
 
-void	ft_print_stack(t_stack *stack)
+void	ft_stackadd_front(t_stack **stack, t_stack *new)
 {
-	t_stack		*current;
-
-	current = stack;
-	while (current->next != stack && current->next)
-	{
-		printf("{index [%d] : value [%d]}\n", current->index, current->value);
-		current = current->next;
-	}
-	printf("{index [%d] : value [%d]}\n", current->index, current->value);
+	ft_stackadd_back(stack, new);
+	*stack = ft_stack_rev_rotate(*stack);
 }
 
 void	ft_free_stack(t_stack *stack)
