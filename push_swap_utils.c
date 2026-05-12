@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 18:24:44 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 11:57:18 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 14:05:54 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,21 @@ void	ft_free_stack(t_stack *stack)
 		current = temp;
 	}
 	free(current);
+}
+
+size_t	ft_stack_len(t_stack *stack)
+{
+	size_t		i;
+	t_stack		*first;
+
+	first = stack;
+	i = 0;
+	if (stack == NULL)
+		return (0);
+	while (stack->next != first)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (++i);
 }
