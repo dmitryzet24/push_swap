@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/11 21:22:40 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 11:58:03 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ typedef struct s_stack
 t_stack		*ft_stacknew(int content, int index);
 void		ft_stackadd_back(t_stack **stack, t_stack *new);
 void		ft_print_stack(t_stack *stack);
+void	ft_free_stack(t_stack *stack);
 
 #endif
