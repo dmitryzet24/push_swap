@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:05:30 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 15:19:17 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 17:05:47 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_print_stack(t_stack *stack)
 	t_stack		*current;
 
 	current = stack;
+	if (stack == NULL)
+		return ;
 	while (current->next != stack && current->next)
 	{
 		printf("{index [%d] : value [%d]}\n", current->index, current->value);

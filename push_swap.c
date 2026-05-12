@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 20:32:19 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 15:19:54 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 17:06:02 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	t_stack	*stack_a;
+	t_stack	*stack_b;
 	char	*command;
 
 	if (argc < 2)
 		return (0);
 	i = 1;
 	stack_a = NULL;
+	stack_b = NULL;
 	while (i < argc)
 	{
 		ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i]), i - 1));
@@ -33,18 +35,36 @@ int	main(int argc, char **argv)
 	{
 		if (*command == 'a')
 		{
-			stack_a = ft_swap_stack(stack_a);
+			ft_stack_swap(&stack_a);
+			printf("stack a\n");
 			ft_print_stack(stack_a);
+			printf("stack b\n");
+			ft_print_stack(stack_b);
 			command = NULL;
 		}
 		else if (*command == 'r')
 		{
-			stack_a = ft_stack_rotate(stack_a);
+			ft_stack_rotate(&stack_a);
+			printf("stack a\n");
 			ft_print_stack(stack_a);
+			printf("stack b\n");
+			ft_print_stack(stack_b);
+			command = NULL;
+		}
+		else if (*command == 'p')
+		{
+			ft_stack_push(&stack_b, &stack_a);
+			printf("stack a\n");
+			ft_print_stack(stack_a);
+			printf("stack b\n");
+			ft_print_stack(stack_b);
 			command = NULL;
 		}
 		command = ft_read_command();
 	}
-	ft_free_stack(stack_a);
+	if (stack_a)
+		ft_free_stack(stack_a);
+	if (stack_b)
+		ft_free_stack(stack_b);
 	return (0);
 }
