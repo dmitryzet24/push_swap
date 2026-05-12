@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 17:05:39 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 17:14:37 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,24 @@ typedef struct s_stack
 	struct s_stack		*prev;
 }	t_stack;
 
+// typedef struct s_single_command
+// {
+// 	char	*name;
+// 	int		code:
+// 	void	*addr;
+// }	t_single_command;
+
+// typedef struct s_list_commands
+// {
+// 	t_single_command	command;
+// }	t_list_commands;
+
 char		*ft_read_command(void);
 size_t		ft_stack_len(t_stack *stack);
 void		ft_stackadd_back(t_stack **stack, t_stack *new);
 void		ft_print_stack(t_stack *stack);
 void		ft_free_stack(t_stack *stack);
-void		ft_stack_swap(t_stack **stack);
+void		ft_stack_swap(t_stack **stack, t_stack **unused);
 void		ft_stackadd_front(t_stack **stack, t_stack *new);
 void		ft_stack_rotate(t_stack **stack);
 void		ft_stack_rev_rotate(t_stack **stack);

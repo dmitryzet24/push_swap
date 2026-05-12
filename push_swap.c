@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 20:32:19 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 17:06:02 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 17:11:39 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	{
 		if (*command == 'a')
 		{
-			ft_stack_swap(&stack_a);
+			ft_stack_swap(&stack_a, NULL);
 			printf("stack a\n");
 			ft_print_stack(stack_a);
 			printf("stack b\n");

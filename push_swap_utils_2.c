@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:52:39 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 17:04:50 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/12 17:11:31 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ void	ft_stack_push(t_stack **dest, t_stack **src)
 	*src = ft_stack_del_top(*src);
 }
 
-void	ft_stack_swap(t_stack **stack)
+void	ft_stack_swap(t_stack **stack, t_stack **unused)
 {
 	t_stack		*second;
 	t_stack		*last;
 
+	(void)(unused);
 	if (stack == NULL)
 		return ;
 	if (*stack && (ft_stack_len(*stack) > 2))
