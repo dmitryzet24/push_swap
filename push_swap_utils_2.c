@@ -6,22 +6,24 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:52:39 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 17:11:31 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 12:12:02 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_stack_rotate(t_stack **stack)
+void	ft_stack_rotate(t_stack **stack, t_stack **unused)
 {
+	(void)unused;
 	if (stack == NULL)
 		return ;
 	if (*stack)
 		*stack = (*stack)->next;
 }
 
-void	ft_stack_rev_rotate(t_stack **stack)
+void	ft_stack_rev_rotate(t_stack **stack, t_stack **unused)
 {
+	(void)unused;
 	if (stack == NULL)
 		return ;
 	if (*stack)
@@ -77,5 +79,5 @@ void	ft_stack_swap(t_stack **stack, t_stack **unused)
 		*stack = second;
 	}
 	else if (*stack && (ft_stack_len(*stack) == 2))
-		ft_stack_rotate(stack);
+		ft_stack_rotate(stack, unused);
 }

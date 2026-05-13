@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:05:30 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 17:35:45 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 11:49:47 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ char	*ft_read_command(void)
 	return (buff);
 }
 
-void	ft_init_commands(t_command commands[12], t_stack **stack_a, t_stack **stack_b)
-{
-	commands[0].name = "sa";
-	commands[0].code = SA;
-	commands[0].func = ft_stack_swap(stack_a, stack_b);
-}
+// void	ft_init_commands(t_command commands[12], t_stack **stack_a, t_stack **stack_b)
+// {
+// 	commands[0].name = "sa";
+// 	commands[0].code = SA;
+// 	commands[0].func = ft_stack_swap(stack_a, stack_b);
+// }

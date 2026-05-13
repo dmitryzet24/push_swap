@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/12 17:33:52 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 12:10:07 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void		ft_print_stack(t_stack *stack);
 void		ft_free_stack(t_stack *stack);
 void		ft_stack_swap(t_stack **stack, t_stack **unused);
 void		ft_stackadd_front(t_stack **stack, t_stack *new);
-void		ft_stack_rotate(t_stack **stack);
-void		ft_stack_rev_rotate(t_stack **stack);
+void		ft_stack_rotate(t_stack **stack, t_stack **unused);
+void		ft_stack_rev_rotate(t_stack **stack, t_stack **unused);
 void		ft_stack_push(t_stack **dest, t_stack **src);
 t_stack		*ft_stack_del_top(t_stack *stack);
 t_stack		*ft_stacknew(int content, int index);
