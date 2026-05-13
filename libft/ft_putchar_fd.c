@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 20:06:04 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/04/27 20:34:23 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/05/04 13:30:30 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:33:59 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

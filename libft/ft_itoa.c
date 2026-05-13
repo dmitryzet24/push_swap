@@ -3,69 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 15:32:42 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/04 21:49:04 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/27 20:53:41 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:30:16 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-static size_t	ft_numlen(long int n)
+static size_t	count_len(long n)
 {
 	size_t	i;
 
 	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
+	if (n <= 0)
 	{
+		i = 1;
 		n = -n;
-		i++;
 	}
 	while (n > 0)
 	{
+		n /= 10;
 		i++;
-		n = n / 10;
 	}
 	return (i);
 }
 
-static char	*ft_return_string(char *dest, long int num, size_t len, int sign)
-{
-	dest[len] = '\0';
-	len--;
-	while (num > 9)
-	{
-		dest[len] = (num % 10) + '0';
-		len--;
-		num = num / 10;
-	}
-	dest[len] = (num % 10) + '0';
-	if (sign == -1)
-		dest[0] = '-';
-	return (dest);
-}
-
 char	*ft_itoa(int n)
 {
-	int				sign;
-	long int		buff;
-	char			*res;
-	size_t			len;
+	char	*str;
+	size_t	len;
+	long	nb;
 
-	sign = 1;
-	buff = (long int)n;
-	len = ft_numlen(buff);
-	if (buff < 0)
-	{
-		sign = -1;
-		buff *= -1;
-	}
-	res = malloc(sizeof(char) * (len + 1));
-	if (res == NULL)
+	nb = n;
+	len = count_len(nb);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	res = ft_return_string(res, buff, len, sign);
-	return (res);
+	str[len] = '\0';
+	if (nb == 0)
+		str[0] = '0';
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		str[--len] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	return (str);
 }

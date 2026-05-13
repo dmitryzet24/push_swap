@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 20:59:39 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/04/27 21:21:32 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/17 14:26:20 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:31:15 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 int	ft_tolower(int c)
 {
-	if ('A' <= c && c <= 'Z')
+	int	i;
+
+	i = 0;
+	if (c >= 'A' && c <= 'Z')
+	{
 		c += 32;
+	}
+	i++;
 	return (c);
 }

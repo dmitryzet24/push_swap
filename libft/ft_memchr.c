@@ -3,28 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 19:35:37 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/06 16:54:05 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/27 12:38:44 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:30:20 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+// The  memchr()  function  scans  the  initial n bytes of the memory area
+// pointed to by s for the first instance of c.
+// Both c and the  bytes  of
+// the memory area pointed to by s are interpreted as unsigned char.
 
 void	*ft_memchr(const void *s, int c, size_t n)
-{
-	unsigned char	*p;
-	unsigned char	b;
 
-	p = (unsigned char *)s;
-	b = (unsigned char)c;
-	while (n > 0)
+{
+	size_t			nv;
+	unsigned char	cv;
+	unsigned char	*sv;
+
+	sv = (unsigned char *)s;
+	cv = (unsigned char)c;
+	nv = 0;
+	while (nv < n)
 	{
-		if (*p == b)
-			return (p);
-		p++;
-		n--;
+		if (sv[nv] == cv)
+			return ((void *)(sv + nv));
+		nv++;
 	}
 	return (NULL);
 }

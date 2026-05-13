@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 14:36:29 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/04/23 18:56:39 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/22 21:10:27 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:30:09 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if ((0 <= c) && (c <= 127))
+	if ((c >= 0) && (c <= 127))
 		return (1);
 	return (0);
 }

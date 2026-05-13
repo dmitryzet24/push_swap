@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:05:30 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 16:03:13 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 16:59:00 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		{
 			comms[i].func(a, b);
 			printf("stack a\n");
+			printf("disorder value %d\n", compute_disorder(*a));
 			ft_print_stack(*a);
 			printf("stack b\n");
 			ft_print_stack(*b);
