@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 20:32:19 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 12:10:46 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 12:33:38 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 	char			*command;
-	// t_command		commands[12];
+	t_command		commands[] = {};
 
 
 
