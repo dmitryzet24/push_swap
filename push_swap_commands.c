@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:05:30 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 15:39:40 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 16:03:13 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		if (ft_strncmp(c, comms[i].name, ft_strlen(c) + 1) == 0)
 		{
 			comms[i].func(a, b);
+			printf("stack a\n");
+			ft_print_stack(*a);
+			printf("stack b\n");
+			ft_print_stack(*b);
 			return ;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 20:32:19 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 15:29:37 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 16:02:41 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,9 @@ int	main(int argc, char **argv)
 	}
 	ft_print_stack(stack_a);
 	command = ft_read_command();
-
 	while (ft_strncmp(command, "q", ft_strlen(command) + 1) != 0)
 	{
 		ft_execute(command, &stack_a, &stack_b, commands);
-		printf("stack a\n");
-		ft_print_stack(stack_a);
-		printf("stack b\n");
-		ft_print_stack(stack_b);
 		command = ft_read_command();
 	}
 	if (stack_a)
