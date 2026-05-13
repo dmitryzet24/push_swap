@@ -1,5 +1,8 @@
 .PHONY: all re clean fclean lft
-FILES = push_swap.c push_swap_utils.c push_swap_utils_2.c push_swap_commands.c push_swap_ops_1_3.c push_swap_ops_2_3.c push_swap_ops_3_3.c
+FILES = push_swap.c push_swap_utils.c push_swap_utils_2.c \
+		push_swap_commands.c push_swap_ops_1_3.c \
+		push_swap_ops_2_3.c push_swap_ops_3_3.c \
+		push_swap_compute_disorder.c
 OBJS = $(FILES:.c=.o)
 HEADERS = push_swap.h
 LFT = -L./libft -lft
@@ -15,7 +18,7 @@ $(NAME): $(OBJS)
 lft:
 	make -C libft
 clean:
-	rm -f $(OBJS)
+	make clean -C libft && rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all

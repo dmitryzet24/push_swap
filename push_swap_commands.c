@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap_commands.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 15:05:30 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 16:06:15 by dsutormi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 void	ft_print_stack(t_stack *stack)
@@ -79,6 +67,7 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		{
 			comms[i].func(a, b);
 			printf("stack a\n");
+			printf("disorder value %d\n", ft_compute_disorder(*a));
 			ft_print_stack(*a);
 			printf("stack b\n");
 			ft_print_stack(*b);

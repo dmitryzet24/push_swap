@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 20:58:31 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/04/24 21:23:04 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/27 17:21:16 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:30:51 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char		*p;
-	size_t		l1;
-	size_t		l2;
+	char	*res;
+	size_t	total_len;
 
-	if (s1 == NULL || s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	l1 = ft_strlen(s1);
-	l2 = ft_strlen(s2);
-	p = ft_calloc((l1 + l2 + 1), sizeof(char));
-	if (p == NULL)
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	res = malloc(sizeof(char) * (total_len + 1));
+	if (!res)
 		return (NULL);
-	ft_strlcpy(p, s1, l1 + 1);
-	ft_strlcat(p, s2, l1 + l2 + 1);
-	return (p);
+	res[0] = '\0';
+	ft_strlcat(res, s1, total_len + 1);
+	ft_strlcat(res, s2, total_len + 1);
+	return (res);
 }

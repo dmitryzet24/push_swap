@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 21:22:41 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/04 17:23:16 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/27 16:44:34 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:31:13 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			src_len;
-	unsigned int	i;
-	char			*dest;
-	unsigned int	j;
+	char	*new_s;
+	size_t	i;
+	size_t	s_len;
 
-	i = 0;
-	j = start;
-	src_len = ft_strlen(s);
-	if (start >= src_len)
-		return (ft_strdup(""));
-	if (len < (src_len - start))
-		dest = malloc(sizeof(char) * ((len) + 1));
-	else
-		dest = malloc(sizeof(char) * ((src_len - start) + 1));
-	if (s == NULL || dest == NULL)
+	if (!s)
 		return (NULL);
-	while ((s[i] != '\0') && (len > 0))
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	new_s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new_s)
+		return (NULL);
+	i = 0;
+	while ((i < len) && (s[start + i] != '\0'))
 	{
-		dest[i++] = s[j++];
-		len--;
+		new_s[i] = s[i + start];
+		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	new_s[i] = '\0';
+	return (new_s);
 }

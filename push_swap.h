@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 18:16:20 by dsutormi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -70,5 +58,6 @@ void		ft_rr(t_stack **a, t_stack **b);
 void		ft_rra(t_stack **a, t_stack **b);
 void		ft_rrb(t_stack **a, t_stack **b);
 void		ft_rrr(t_stack **a, t_stack **b);
+int			ft_compute_disorder(t_stack *n);
 
 #endif

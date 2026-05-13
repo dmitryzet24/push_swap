@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 20:59:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/04/20 20:59:46 by dsutormi         ###   ########.fr       */
+/*   Created: 2026/04/17 14:24:08 by dandrush          #+#    #+#             */
+/*   Updated: 2026/05/04 13:31:18 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 int	ft_toupper(int c)
 {
-	if ('a' <= c && c <= 'z')
+	int	i;
+
+	i = 0;
+	if (c >= 'a' && c <= 'z')
+	{
 		c -= 32;
+	}
+	i++;
 	return (c);
 }
