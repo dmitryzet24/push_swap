@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:52:39 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 12:33:36 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 14:15:20 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	ft_stack_swap(t_stack **stack, t_stack **unused)
 
 	(void)(unused);
 	if (stack == NULL)
+		return ;
+	if (*stack == NULL)
 		return ;
 	if (*stack && (ft_stack_len(*stack) > 2))
 	{

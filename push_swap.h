@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 13:32:16 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 15:40:22 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void		ft_stack_rev_rotate(t_stack **stack, t_stack **unused);
 void		ft_stack_push(t_stack **dest, t_stack **src);
 t_stack		*ft_stack_del_top(t_stack *stack);
 t_stack		*ft_stacknew(int content, int index);
-void		ft_init_commands(t_command (*comm)[12]);//, t_stack **a, t_stack **b);
+void		ft_init_commands(t_command (*comm));//, t_stack **a, t_stack **b);
+void		ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms);
 void		ft_sa(t_stack **a, t_stack **b);
 void		ft_sb(t_stack **a, t_stack **b);
 void		ft_ss(t_stack **a, t_stack **b);
