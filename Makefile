@@ -18,7 +18,7 @@ $(NAME): $(OBJS)
 lft:
 	make -C libft
 clean:
-	rm -f $(OBJS)
+	make clean -C libft && rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
