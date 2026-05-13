@@ -1,4 +1,3 @@
-
 #include "push_swap.h"
 
 void	ft_print_stack(t_stack *stack)
