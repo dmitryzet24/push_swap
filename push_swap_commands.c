@@ -68,7 +68,7 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		{
 			comms[i].func(a, b);
 			printf("stack a\n");
-			printf("disorder value %d\n", compute_disorder(*a));
+			printf("disorder value %d\n", ft_compute_disorder(*a));
 			ft_print_stack(*a);
 			printf("stack b\n");
 			ft_print_stack(*b);
