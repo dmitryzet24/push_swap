@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 17:04:43 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 12:33:31 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 13:32:16 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,16 @@ typedef struct s_stack
 {
 	int					value;
 	int					index;
-
 	struct s_stack		*next;
 	struct s_stack		*prev;
 }	t_stack;
 
-typedef void(*t_single_instruction)(t_stack **a, t_stack **b);
+typedef void (t_operation)(t_stack **a, t_stack **b);
 
 typedef struct s_command
 {
 	char					*name;
-	int						code;
-	t_single_instruction	func;
+	t_operation				*func;
 }	t_command;
 
 char		*ft_read_command(void);
@@ -59,9 +57,9 @@ void		ft_stack_rev_rotate(t_stack **stack, t_stack **unused);
 void		ft_stack_push(t_stack **dest, t_stack **src);
 t_stack		*ft_stack_del_top(t_stack *stack);
 t_stack		*ft_stacknew(int content, int index);
-void		ft_init_commands(t_command comm[12], t_stack **a, t_stack **b);
+void		ft_init_commands(t_command (*comm)[12]);//, t_stack **a, t_stack **b);
 void		ft_sa(t_stack **a, t_stack **b);
-void		ft_sa(t_stack **a, t_stack **b);
+void		ft_sb(t_stack **a, t_stack **b);
 void		ft_ss(t_stack **a, t_stack **b);
 void		ft_pa(t_stack **a, t_stack **b);
 void		ft_pb(t_stack **a, t_stack **b);

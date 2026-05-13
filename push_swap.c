@@ -6,7 +6,7 @@
 /*   By: dsutormi <dsutormi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 20:32:19 by dsutormi          #+#    #+#             */
-/*   Updated: 2026/05/13 12:33:38 by dsutormi         ###   ########.fr       */
+/*   Updated: 2026/05/13 13:37:43 by dsutormi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ int	main(int argc, char **argv)
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 	char			*command;
-	t_command		commands[] = {};
-
-
+	t_command		commands[12];
 
 	if (argc < 2)
 		return (0);
 	i = 1;
 	stack_a = NULL;
 	stack_b = NULL;
-	// ft_init_commands(commands, &stack_a, &stack_b);
+	ft_init_commands(&commands);//, &stack_a, &stack_b);
 	while (i < argc)
 	{
 		ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i]), i - 1));
@@ -37,17 +35,12 @@ int	main(int argc, char **argv)
 	command = ft_read_command();
 
 
-
-
-
-
-
-
 	while (command)
 	{
 		if (*command == 'a')
 		{
-			ft_stack_swap(&stack_a, &stack_b);
+			// ft_stack_swap(&stack_a, &stack_b);
+			commands[SA].func(&stack_a, &stack_b);
 			printf("stack a\n");
 			ft_print_stack(stack_a);
 			printf("stack b\n");
