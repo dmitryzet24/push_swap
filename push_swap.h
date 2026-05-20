@@ -45,7 +45,7 @@ void		ft_stack_rev_rotate(t_stack **stack, t_stack **unused);
 void		ft_stack_push(t_stack **dest, t_stack **src);
 t_stack		*ft_stack_del_top(t_stack *stack);
 t_stack		*ft_stacknew(int content, int index);
-//void		ft_init_commands(t_command (*comm));//, t_stack **a, t_stack **b);
+void		ft_init_commands(t_command (*comm));//, t_stack **a, t_stack **b);
 void		ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms);
 void		ft_sa(t_stack **a, t_stack **b);
 void		ft_sb(t_stack **a, t_stack **b);
@@ -64,7 +64,10 @@ void		ft_shell_sort(int *arr, int n);
 int			ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv);
 
 int			*list_to_arr(t_stack *a);
-void		shell_sort(int	*arr, int	n);
+void		ft_shell_sort(int	*arr, int	n);
+void		ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms);
+void		ft_stack_put_index(t_stack *a);
+int			*ft_list_to_arr(t_stack *a);
 
 
 #endif

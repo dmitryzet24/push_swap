@@ -9,7 +9,7 @@ int	ft_sqrt(int nb)
 	i = 1;
 	while (i <= nb / i) /* No point in continuing */
 	{
-		if (i * i = nb)
+		if (i * i == nb)
 			return (i);
 		i++;
 	}
@@ -17,12 +17,12 @@ int	ft_sqrt(int nb)
 }
 
 /* Finds best position for a current number have to be sorted */
-int	ft_find_best_pos(t_stack *b, int current_chank_limit)
+int	ft_find_best_pos(t_stack *s, int current_chank_limit)
 {
-	t_stack	*tmp;
-	int		pos;
-	int		top_match_pos;
-	int		bottom_match_pos;
+	t_stack		*tmp;
+	int			pos;
+	int			top_match_pos;
+	int			bottom_match_pos;
 
 	if (!s)
 		return (-1);
@@ -40,6 +40,8 @@ int	ft_find_best_pos(t_stack *b, int current_chank_limit)
 		}
 		pos++;
 		tmp = tmp->next;
+		if (tmp == s)
+			break;
 	}
 	if (top_match_pos == -1)
 		return (-1);
@@ -51,11 +53,11 @@ int	ft_find_best_pos(t_stack *b, int current_chank_limit)
 /* We should have index in t_stack a ALREADY */
 void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 {
-	size_t	stack_len;
-	int		chank_size;
-	int		current_chank_limit;
-	int		target_pos;
-	int		rotations;
+	size_t		stack_len;
+	int			chank_size;
+	int			current_chank_limit;
+	int			target_pos;
+	int			rotations;
 
 	stack_len = ft_stack_len(*a);
 	chank_size = ft_sqrt(stack_len);
@@ -68,10 +70,10 @@ void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 
 		if (target_pos == -1)
 		{
-			current_chank_limit = += chank_size; /* Previous chunk pre-sorted */
+			current_chank_limit += chank_size; /* Previous chunk pre-sorted */
 			continue;
 		}
-		if (target_pos <= ft_stack_len(*a) / 2) /* It's cheaper to do "ra" */
+		if ((size_t)target_pos <= ft_stack_len(*a) / 2) /* It's cheaper to do "ra" */
 		{
 			while (target_pos > 0)
 			{
@@ -92,5 +94,5 @@ void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 		if (ft_stack_len(*b) > 1 && (*b)->index < (current_chank_limit - (chank_size / 2)))
 			ft_execute("rb", a, b, comms);
 	}
-	// ... часть с обратным разворотом из B в A ...
+	
 }
