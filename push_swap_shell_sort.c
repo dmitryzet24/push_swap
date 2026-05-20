@@ -1,23 +1,20 @@
-
 #include "push_swap.h"
 
 /*Shell Sotr function using Lazarus & Frank sequence*/
-void	ft_shell_sort(int	*arr, int	n)
+void	ft_shell_sort(int *arr, int n)
 {
 	int	gap;
 	int	i;
 	int	j;
 	int	temp;
-	
+
 	j = 0;
 	if (n < 1 || !arr)
 		return ;
-/*Calculating Lazarus & Frank variable*/
 	gap = 1;
 	while (gap < n)
 		gap = ((gap * 2) + 1);
 	gap = ((gap - 1) / 2);
-
 	while (gap > 0)
 	{
 		i = gap;
@@ -34,7 +31,6 @@ void	ft_shell_sort(int	*arr, int	n)
 			i++;
 		}
 		gap = ((gap - 1) / 2);
-
 	}
 }
 

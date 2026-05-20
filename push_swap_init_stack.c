@@ -14,22 +14,11 @@ int	ft_check_line(char *line)
 	return (0);
 }
 
-int	ft_check_input(int argc, char **argv)
+int	ft_check_doubles(int argc, char **argv)
 {
 	int		i;
-	int		j;
 	int		arr[512];
 
-	if (argc < 2 || argc > 501)
-		return (1);
-	i = 1;
-	j = 0;
-	while (i < argc)
-	{
-		if (ft_check_line(argv[i]))
-			return (1);
-		i++;
-	}
 	i = 1;
 	while (i < argc)
 	{
@@ -47,6 +36,26 @@ int	ft_check_input(int argc, char **argv)
 	return (0);
 }
 
+int	ft_check_input(int argc, char **argv)
+{
+	int		i;
+	int		j;
+
+	if (argc < 2 || argc > 501)
+		return (1);
+	i = 1;
+	j = 0;
+	while (i < argc)
+	{
+		if (ft_check_line(argv[i]))
+			return (1);
+		i++;
+	}
+	if (ft_check_doubles(argc, argv))
+		return (1);
+	return (0);
+}
+
 int	ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv)
 {
 	int		value;
@@ -57,7 +66,6 @@ int	ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv)
 		return (1);
 	*a = NULL;
 	*b = NULL;
-
 	i = 1;
 	while (i < argc)
 	{
