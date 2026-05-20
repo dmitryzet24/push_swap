@@ -2,7 +2,7 @@
 
 int	main(int argc, char **argv)
 {
-	int				i;
+	// int				i;
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 	char			*command;
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 	// 	ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i]), i - 1));
 	// 	i++;
 	// }
+	if (ft_init_stucture(&stack_a, &stack_b, argc, argv))
+		return (0);
 	ft_insertion_sort(&stack_a, &stack_b, commands);
 	ft_print_stack(stack_a);
 	command = ft_read_command();
