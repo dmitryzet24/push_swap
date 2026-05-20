@@ -2,23 +2,12 @@
 
 int	main(int argc, char **argv)
 {
-	// int				i;
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 	char			*command;
 	t_command		commands[12];
 
-	// if (argc < 2 || argc > 501)
-	// 	return (0);
-	// i = 1;
 	ft_init_commands(commands);
-	// stack_a = NULL;
-	// stack_b = NULL;
-	// while (i < argc)
-	// {
-	// 	ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i]), i - 1));
-	// 	i++;
-	// }
 	if (ft_init_stucture(&stack_a, &stack_b, argc, argv))
 		return (0);
 	ft_insertion_sort(&stack_a, &stack_b, commands);

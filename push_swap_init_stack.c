@@ -1,5 +1,18 @@
-
 #include "push_swap.h"
+
+int	ft_check_line(char *line)
+{
+	int		i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (!(ft_isdigit(line[i]) || line[i] == '-'))
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int	ft_check_input(int argc, char **argv)
 {
@@ -13,21 +26,21 @@ int	ft_check_input(int argc, char **argv)
 	j = 0;
 	while (i < argc)
 	{
-		if (!(ft_isdigit(argv[i][j])))
+		if (ft_check_line(argv[i]))
 			return (1);
 		i++;
 	}
 	i = 1;
 	while (i < argc)
 	{
-		arr[i-1] = ft_atoi(argv[i]);
+		arr[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
-	ft_shell_sort(arr, argc-1);
+	ft_shell_sort(arr, argc - 1);
 	i = 0;
-	while(i < argc - 2)
+	while (i < argc - 2)
 	{
-		if (arr[i] == arr[i+1])
+		if (arr[i] == arr[i + 1])
 			return (1);
 		i++;
 	}
