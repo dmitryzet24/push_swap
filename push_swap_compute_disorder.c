@@ -6,7 +6,7 @@
 /*   By: dandrush <dandrush@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 12:34:11 by dandrush          #+#    #+#             */
-/*   Updated: 2026/05/13 21:16:21 by dandrush         ###   ########.fr       */
+/*   Updated: 2026/05/20 14:05:27 by dandrush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_compute_disorder(t_stack *n)
 	if (n == NULL)
 		return 10000;
 	if (len == 1)
-		return (0);
+		return (10000);
 	while (i != n->prev)
 	{
 		j = i;
