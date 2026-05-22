@@ -63,7 +63,10 @@ void		ft_insertion_sort(t_stack **a, t_stack **b, t_command *commands);
 void		ft_shell_sort(int *arr, int n);
 int			ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv);
 int			*list_to_arr(t_stack *a);
-void		shell_sort(int	*arr, int	n);
+void		ft_shell_sort(int	*arr, int	n);
+void		ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms);
+void		ft_stack_put_index(t_stack *a);
+int			*ft_list_to_arr(t_stack *a);
 
 
 #endif

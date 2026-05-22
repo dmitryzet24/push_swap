@@ -29,7 +29,7 @@ char	*ft_read_command(void)
 	return (buff);
 }
 
-void	ft_init_commands(t_command commands[12])
+void	ft_init_commands(t_command *commands)
 {
 	commands[0].name = "sa";
 	commands[0].func = ft_sa;
@@ -66,14 +66,14 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		if (ft_strncmp(c, comms[i].name, ft_strlen(c) + 1) == 0)
 		{
 			comms[i].func(a, b);
-			// printf("stack a\n");
-			// printf("disorder value [%d]\n", ft_compute_disorder(*a));
-			// ft_print_stack(*a);
-			// printf("stack b\n");
-			// printf("disorder value [%d]\n", ft_compute_disorder(*b));
-			// ft_print_stack(*b);
+			printf("stack a\n");
+			printf("disorder value [%d]\n", ft_compute_disorder(*a));
+			ft_print_stack(*a);
+			printf("stack b\n");
+			printf("disorder value [%d]\n", ft_compute_disorder(*b));
+			ft_print_stack(*b);
 			printf("%s\n", comms[i].name);
-			// printf("\n");
+			printf("\n");
 			return ;
 		}
 		i++;

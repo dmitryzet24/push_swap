@@ -65,19 +65,19 @@ void	ft_shell_sort(int *arr, int n)
 // 			return i;
 // 		i++;
 // 	}
+// 	return (0);
 // }
 
-// void	ft_index_stack(t_stack *a)
+// void	ft_stack_put_index(t_stack *a)
 // {
 // 	int		*arr;
 // 	int		size;
-// 	t_skack	*curr;
-
+// 	t_stack	*curr;
 // 	size = ft_stack_len(a);
-// 	arr = list_to_arr(a);
+// 	arr = ft_list_to_arr(a);
 // 	if (!arr)
 // 		return ;
-// 	shell_sort(arr, size);
+// 	ft_shell_sort(arr, size);
 // 	curr = a;
 // 	while (curr)
 // 	{
