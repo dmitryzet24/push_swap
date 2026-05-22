@@ -13,5 +13,6 @@ void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms);
 void	ft_shell_sort(int *arr, int n);
 void	ft_insertion_sort(t_stack **a, t_stack **b, t_command *commands);
 int		ft_get_chunk_size(int stack_len);
+void	ft_chunk_sort_custom(t_stack **a, t_stack **b, t_command *comms);
 
 #endif

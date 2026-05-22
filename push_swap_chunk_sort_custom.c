@@ -1,8 +1,9 @@
 #include "push_swap.h"
 #include "push_swap_2.h"
 
-/* We should have index in t_stack a ALREADY */
-void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
+/* USES push_swap_utils_3.c */
+
+void	ft_chunk_sort_custom(t_stack **a, t_stack **b, t_command *comms)
 {
 	size_t	stack_len;
 	int		chank_size;
@@ -13,7 +14,7 @@ void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 	int		b_len;
 
 	stack_len = ft_stack_len(*a);
-	chank_size = ft_get_chunk_size(int stack_len);
+	chank_size = ft_get_chunk_size(stack_len);
 	if (chank_size < 1)
 		chank_size = 1;
 	current_chank_limit = chank_size;

@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include "push_swap_2.h"
 
-/* We should have index in t_stack a ALREADY */
+/* USES push_swap_utils_3.c */
 void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 {
 	size_t	stack_len;

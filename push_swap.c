@@ -26,6 +26,8 @@ int	main(int argc, char **argv)
 		ft_insertion_sort(&stack_a, &stack_b, commands);
 	else if (strategy == 2)
 		ft_chunk_sort(&stack_a, &stack_b, commands);
+	else if (strategy == 3)
+		ft_chunk_sort_custom(&stack_a, &stack_b, commands);
 	else if (strategy == 4)
 		ft_insertion_sort(&stack_a, &stack_b, commands);
 	ft_print_stack(stack_a);

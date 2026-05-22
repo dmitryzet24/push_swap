@@ -78,6 +78,6 @@ int	ft_get_chunk_size(int stack_len)
 	if (stack_len <= 16)
 		return (3);
 	if (stack_len <= 100)
-		return (22);
-	return (43);
+		return (35);
+	return (48);
 }
