@@ -67,6 +67,7 @@ int	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		if (ft_strncmp(c, comms[i].name, ft_strlen(c) + 1) == 0)
 		{
 			comms[i].func(a, b);
+
 			//printf("stack a\n");
 			//printf("disorder value [%d]\n", ft_compute_disorder(*a));
 			//ft_print_stack(*a);

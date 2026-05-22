@@ -62,4 +62,5 @@ int			ft_compute_disorder(t_stack *n);
 int			ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv);
 
 # include "push_swap_2.h"
+
 #endif
