@@ -15,21 +15,21 @@ int	main(int argc, char **argv)
 	int				strategy;
 
 	ft_init_commands(commands);
-	strategy = ft_init_stucture(&stack_a, &stack_b, argc, argv);
-	if (!strategy)
-	{
-		printf("Error\n");
-		return (0);
-	}
-	ft_print_stack(stack_a);
-	if (strategy == 1)
-		ft_insertion_sort(&stack_a, &stack_b, commands);
-	else if (strategy == 2)
-		ft_chunk_sort(&stack_a, &stack_b, commands);
-	else if (strategy == 3)
-		ft_chunk_sort_custom(&stack_a, &stack_b, commands);
-	else if (strategy == 4)
-		ft_insertion_sort(&stack_a, &stack_b, commands);
+	// strategy = ft_init_stucture(&stack_a, &stack_b, argc, argv);
+	// if (!strategy)
+	// {
+	// 	printf("Error\n");
+	// 	return (0);
+	// }
+	// ft_print_stack(stack_a);
+	// if (strategy == 1)
+	// 	ft_insertion_sort(&stack_a, &stack_b, commands);
+	// else if (strategy == 2)
+	// 	ft_chunk_sort(&stack_a, &stack_b, commands);
+	// else if (strategy == 3)
+	// 	ft_chunk_sort_custom(&stack_a, &stack_b, commands);
+	// else if (strategy == 4)
+	// 	ft_insertion_sort(&stack_a, &stack_b, commands);
 	ft_print_stack(stack_a);
 	command = ft_read_command();
 	while (ft_strncmp(command, "q", ft_strlen(command) + 1) != 0)

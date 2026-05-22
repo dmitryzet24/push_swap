@@ -1,6 +1,7 @@
 #ifndef PUSH_SWAP_2_H
 # define PUSH_SWAP_2_H
 
+typedef struct 
 
 int		*list_to_arr(t_stack *a);
 void	ft_shell_sort(int	*arr, int	n);
