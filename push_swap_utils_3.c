@@ -72,3 +72,12 @@ int	ft_find_index_pos(t_stack *b, int target_index)
 	}
 	return (-1);
 }
+
+int	ft_get_chunk_size(int stack_len)
+{
+	if (stack_len <= 16)
+		return (3);
+	if (stack_len <= 100)
+		return (22);
+	return (43);
+}

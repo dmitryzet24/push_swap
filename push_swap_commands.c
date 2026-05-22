@@ -84,3 +84,4 @@ int	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 	}
 	return (cnt);
 }
+
