@@ -59,15 +59,7 @@ void		ft_rra(t_stack **a, t_stack **b);
 void		ft_rrb(t_stack **a, t_stack **b);
 void		ft_rrr(t_stack **a, t_stack **b);
 int			ft_compute_disorder(t_stack *n);
-void		ft_insertion_sort(t_stack **a, t_stack **b, t_command *commands);
-void		ft_shell_sort(int *arr, int n);
 int			ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv);
 
-int			*list_to_arr(t_stack *a);
-void		ft_shell_sort(int	*arr, int	n);
-void		ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms);
-void		ft_stack_put_index(t_stack *a);
-int			*ft_list_to_arr(t_stack *a);
-
-
+# include "push_swap_2.h"
 #endif
