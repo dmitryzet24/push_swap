@@ -73,6 +73,7 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 			// printf("disorder value [%d]\n", ft_compute_disorder(*b));
 			// ft_print_stack(*b);
 			printf("%s\n", comms[i].name);
+			// printf("\n");
 			return ;
 		}
 		i++;
