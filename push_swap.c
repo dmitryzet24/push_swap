@@ -17,8 +17,10 @@ int	main(int argc, char **argv)
 	ft_init_commands(commands);
 	strategy = ft_init_stucture(&stack_a, &stack_b, argc, argv);
 	if (!strategy)
+	{
+		printf("Error\n");
 		return (0);
-
+	}
 	ft_print_stack(stack_a);
 	if (strategy == 1)
 		ft_insertion_sort(&stack_a, &stack_b, commands);

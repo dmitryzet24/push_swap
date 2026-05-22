@@ -25,16 +25,20 @@ int	ft_check_input(int argc, char **argv, int (*arr)[512])
 {
 	int		i;
 	int		j;
+	int		flag;
 
-	if (argc < 2 || argc > 501)
+	if (argc < 2 || argc > 502)
 		return (0);
 	i = 1;
 	while (i < argc)
 	{
+		flag = 1;
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!(ft_isdigit(argv[i][j]) || (argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))))
+			if ((argv[i][j] == '-') && flag--)
+				j++;
+			if (!(ft_isdigit(argv[i][j])))
 				return (0);
 			j++;
 		}
@@ -44,14 +48,14 @@ int	ft_check_input(int argc, char **argv, int (*arr)[512])
 		return (0);
 	return (1);
 }
-int ft_get_index2(int *arr, int val)
+
+int	ft_get_index2(int *arr, int val)
 {
-	int i;
+	int		i;
+
 	i = 0;
-	
 	while (val != arr[i])
 		i++;
-	
 	return (i);
 }
 
@@ -60,25 +64,25 @@ int	ft_return_strategy(int *argc, char **argv)
 	int		strategy;
 
 	strategy = 4;
-	if (ft_strncmp(argv[*argc-1], "--simple", 9) == 0)
+	if (ft_strncmp(argv[*argc - 1], "--simple", 9) == 0)
 	{
 		printf("simple\n");
 		(*argc)--;
 		strategy = 1;
 	}
-	else if (ft_strncmp(argv[*argc-1], "--medium", 9) == 0)
+	else if (ft_strncmp(argv[*argc - 1], "--medium", 9) == 0)
 	{
 		printf("medium\n");
 		(*argc)--;
 		strategy = 2;
 	}
-	else if (ft_strncmp(argv[*argc-1], "--complex", 10) == 0)
+	else if (ft_strncmp(argv[*argc - 1], "--complex", 10) == 0)
 	{
 		printf("complex\n");
 		(*argc)--;
 		strategy = 3;
 	}
-	else if (ft_strncmp(argv[*argc-1], "--adaptive", 11) == 0)
+	else if (ft_strncmp(argv[*argc - 1], "--adaptive", 11) == 0)
 	{
 		printf("adaptive\n");
 		(*argc)--;
@@ -95,19 +99,6 @@ int	ft_init_stucture(t_stack **a, t_stack **b, int argc, char **argv)
 	int		strategy;
 
 	strategy = ft_return_strategy(&argc, argv);
-	if (ft_strncmp(argv[argc-1], "--simple", 9) == 0)
-		printf("simple\n");
-		// strategy = 1;
-	if (ft_strncmp(argv[argc-1], "--medium", 9) == 0)
-		printf("medium\n");
-		// strategy = 2;
-	if (ft_strncmp(argv[argc-1], "--complex", 10) == 0)
-		printf("complex\n");
-		// strategy = 3;
-	if (ft_strncmp(argv[argc-1], "--adaptive", 11) == 0)
-		printf("adaptive\n");
-	// argc--;
-	
 	if (!(ft_check_input(argc, argv, &arr)))
 		return (0);
 	*a = NULL;
