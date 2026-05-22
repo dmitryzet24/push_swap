@@ -68,5 +68,4 @@ void		ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms);
 void		ft_stack_put_index(t_stack *a);
 int			*ft_list_to_arr(t_stack *a);
 
-
 #endif
