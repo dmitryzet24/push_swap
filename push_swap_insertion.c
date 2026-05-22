@@ -126,10 +126,14 @@ void	ft_insertion_sort(t_stack **a, t_stack **b, t_command *commands)
 			ft_rotate_handler_less_max(a, b, commands);
 			continue ;
 		}
-		ft_sort_by_disorder(a, b, commands);
+		// ft_sort_by_disorder(a, b, commands);
+		// while (ft_compute_disorder(*b) != 10000)
+			// ft_execute("rb", a, b, commands);
 		ft_update_maxmin(&max, &min, a);
 	}
-	ft_sort_by_disorder(a, b, commands);
+	// ft_sort_by_disorder(a, b, commands);
+	// while (ft_compute_disorder(*b) != 10000)
+	// 	ft_execute("rb", a, b, commands);
 	while (*b)
 		ft_execute("pa", a, b, commands);
 }
