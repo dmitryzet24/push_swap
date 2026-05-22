@@ -67,7 +67,7 @@ void	ft_rotate_handler_more_min(t_stack **a, t_stack **b, t_command *commands)
 		return ;
 	}
 	while ((*a)->value < (*b)->value)
-			ft_execute("rrb", a, b, commands);
+		ft_execute("rrb", a, b, commands);
 }
 
 void	ft_rotate_handler_less_max(t_stack **a, t_stack **b, t_command *commands)
@@ -79,26 +79,25 @@ void	ft_rotate_handler_less_max(t_stack **a, t_stack **b, t_command *commands)
 	count_r = 0;
 	count_rr = 0;
 	temp = *b;
-	while ((*a)->value > temp->prev->value)
+	while (!(((*a)->value < temp->prev->value) && ((*a)->value > temp->value)))
 	{
 		temp = temp->next;
 		count_r++;
 	}
 	temp = *b;
-	while ((*a)->value > temp->prev->value)
+	while (!(((*a)->value < temp->prev->value) && ((*a)->value > temp->value)))
 	{
 		temp = temp->prev;
 		count_rr++;
 	}
 	if (count_r <= count_rr)
 	{
-		while ((*a)->value > (*b)->prev->value)
-
+		while (!(((*a)->value < (*b)->prev->value) && ((*a)->value > (*b)->value)))
 			ft_execute("rb", a, b, commands);
 		return ;
 	}
-	while ((*a)->value > (*b)->prev->value)
-			ft_execute("rrb", a, b, commands);
+	while (!((*a)->value < (*b)->prev->value) && ((*a)->value > (*b)->value))
+		ft_execute("rrb", a, b, commands);
 }
 
 void	ft_insertion_sort(t_stack **a, t_stack **b, t_command *commands)
