@@ -56,13 +56,12 @@ void	ft_init_commands(t_command *commands)
 	commands[11].name = NULL;
 }
 
-void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
+int	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 {
 	int			i;
-	//static int	cnt;
+	static int	cnt;
 
 	i = 0;
-	//cnt = 0;
 	while ((comms + i)->name)
 	{
 		if (ft_strncmp(c, comms[i].name, ft_strlen(c) + 1) == 0)
@@ -76,8 +75,11 @@ void	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 			//ft_print_stack(*b);
 			printf("%s\n", comms[i].name);
 			printf("\n");
-			return ;
+			cnt += 1;
+			printf("Miau, blyat' %d\n", cnt);
+			return (cnt);
 		}
 		i++;
 	}
+	return (cnt);
 }

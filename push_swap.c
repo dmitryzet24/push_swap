@@ -10,10 +10,10 @@ int	main(int argc, char **argv)
 	ft_init_commands(commands);
 	if (ft_init_stucture(&stack_a, &stack_b, argc, argv))
 		return (0);
-	//ft_insertion_sort(&stack_a, &stack_b, commands);
+	ft_insertion_sort(&stack_a, &stack_b, commands);
 
 	ft_print_stack(stack_a);
-	ft_chunk_sort(&stack_a, &stack_b, commands);
+	//ft_chunk_sort(&stack_a, &stack_b, commands);
 	ft_print_stack(stack_a);
 	command = ft_read_command();
 	while (ft_strncmp(command, "q", ft_strlen(command) + 1) != 0)
@@ -25,5 +25,6 @@ int	main(int argc, char **argv)
 		ft_free_stack(stack_a);
 	if (stack_b)
 		ft_free_stack(stack_b);
+	printf("Finish: %d\n", ft_execute("ps", &stack_a, &stack_b, commands));
 	return (0);
 }
