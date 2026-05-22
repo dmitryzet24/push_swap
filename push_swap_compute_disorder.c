@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include "push_swap_2.h"
 
 static int	ft_check_len(t_stack *n)
 {

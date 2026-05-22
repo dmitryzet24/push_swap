@@ -1,63 +1,16 @@
 #include "push_swap.h"
-
-int	ft_sqrt(int nb)
-{
-	int	i;
-
-	if (nb <= 0)
-		return (0);
-	i = 1;
-	while (i <= nb / i) /* No point in continuing */
-	{
-		if (i * i == nb)
-			return (i);
-		i++;
-	}
-	return (i - 1); /* Bc we have to have actual number on return */
-}
-
-/* Finds best position for a current number have to be sorted */
-int	ft_find_best_pos(t_stack *s, int current_chank_limit)
-{
-	t_stack		*tmp;
-	int			pos;
-	int			top_match_pos;
-	int			bottom_match_pos;
-
-	if (!s)
-		return (-1);
-	top_match_pos = -1;
-	bottom_match_pos = -1;
-	tmp = s;
-	pos = 0;
-	while (tmp)
-	{
-		if (tmp->index <= current_chank_limit)
-		{
-			if (top_match_pos == -1)
-				top_match_pos = pos;
-			bottom_match_pos = pos;
-		}
-		pos++;
-		tmp = tmp->next;
-		if (tmp == s)
-			break;
-	}
-	if (top_match_pos == -1)
-		return (-1);
-	if (top_match_pos <= (pos - bottom_match_pos))
-		return (top_match_pos);
-	return (bottom_match_pos);
-}
+#include "push_swap_2.h"
 
 /* We should have index in t_stack a ALREADY */
 void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 {
-	size_t		stack_len;
-	int			chank_size;
-	int			current_chank_limit;
-	int			target_pos;
-	int			rotations;
+	size_t	stack_len;
+	int		chank_size;
+	int		current_chank_limit;
+	int		target_pos;
+	int		rotations;
+	int		target_index;
+	int		b_len;
 
 	stack_len = ft_stack_len(*a);
 	chank_size = ft_sqrt(stack_len);
@@ -94,5 +47,29 @@ void	ft_chunk_sort(t_stack **a, t_stack **b, t_command *comms)
 		if (ft_stack_len(*b) > 1 && (*b)->index < (current_chank_limit - (chank_size / 2)))
 			ft_execute("rb", a, b, comms);
 	}
-	
+	target_index = ft_stack_len(*b) - 1;
+	while (*b != NULL)
+	{
+		target_pos = ft_find_index_pos(*b, target_index);
+		b_len = ft_stack_len(*b);
+		if (target_pos <= b_len / 2)
+		{
+			while (target_pos > 0)
+			{
+				ft_execute("rb", a, b, comms);
+				target_pos--;
+			}
+		}
+		else
+		{
+			rotations = b_len - target_pos;
+			while (rotations > 0)
+			{
+				ft_execute("rrb", a, b, comms);
+				rotations--;
+			}
+		}
+		ft_execute("pa", a, b, comms);
+		target_index--;
+	}
 }
