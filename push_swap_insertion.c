@@ -40,35 +40,35 @@ void	ft_sort_by_disorder(t_stack **a, t_stack **b, t_command *commands)
 		ft_execute("rrb", a, b, commands);
 }
 
-void	ft_rotate_handler_more_min(t_stack **a, t_stack **b, t_command *commands)
-{
-	int		count_r;
-	int		count_rr;
-	t_stack	*temp;
+// void	ft_rotate_handler_more_min(t_stack **a, t_stack **b, t_command *commands)
+// {
+// 	int		count_r;
+// 	int		count_rr;
+// 	t_stack	*temp;
 
-	count_r = 0;
-	count_rr = 0;
-	temp = *b;
-	while ((*a)->value < temp->value)
-	{
-		temp = temp->next;
-		count_r++;
-	}
-	temp = *b;
-	while ((*a)->value < temp->value)
-	{
-		temp = temp->prev;
-		count_rr++;
-	}
-	if (count_r <= count_rr)
-	{
-		while ((*a)->value < (*b)->value)
-			ft_execute("rb", a, b, commands);
-		return ;
-	}
-	while ((*a)->value < (*b)->value)
-		ft_execute("rrb", a, b, commands);
-}
+// 	count_r = 0;
+// 	count_rr = 0;
+// 	temp = *b;
+// 	while ((*a)->value < temp->value)
+// 	{
+// 		temp = temp->next;
+// 		count_r++;
+// 	}
+// 	temp = *b;
+// 	while ((*a)->value < temp->value)
+// 	{
+// 		temp = temp->prev;
+// 		count_rr++;
+// 	}
+// 	if (count_r <= count_rr)
+// 	{
+// 		while ((*a)->value < (*b)->value)
+// 			ft_execute("rb", a, b, commands);
+// 		return ;
+// 	}
+// 	while ((*a)->value < (*b)->value)
+// 		ft_execute("rrb", a, b, commands);
+// }
 
 void	ft_rotate_handler_less_max(t_stack **a, t_stack **b, t_command *commands)
 {
@@ -96,7 +96,7 @@ void	ft_rotate_handler_less_max(t_stack **a, t_stack **b, t_command *commands)
 			ft_execute("rb", a, b, commands);
 		return ;
 	}
-	while (!((*a)->value < (*b)->prev->value) && ((*a)->value > (*b)->value))
+	while (!(((*a)->value < (*b)->prev->value) && ((*a)->value > (*b)->value)))
 		ft_execute("rrb", a, b, commands);
 }
 
@@ -110,12 +110,18 @@ void	ft_insertion_sort(t_stack **a, t_stack **b, t_command *commands)
 	while (*a)
 	{
 		ft_execute("pb", a, b, commands);
-		if (*a && ((*a)->value < (*b)->value) && ((*a)->value > min))
-		{
-			ft_rotate_handler_more_min(a, b, commands);
-			continue ;
-		}
-		if ((*a && (*a)->value > (*b)->value) && ((*a)->value < max))
+		// if (*a && ((*a)->value < (*b)->value) && ((*a)->value > min))
+		// {
+		// 	// ft_rotate_handler_more_min(a, b, commands);
+		// 	ft_rotate_handler_less_max(a, b, commands);
+		// 	continue ;
+		// }
+		// if ((*a && (*a)->value > (*b)->value) && ((*a)->value < max))
+		// {
+		// 	ft_rotate_handler_less_max(a, b, commands);
+		// 	continue ;
+		// }
+		if ((*a && ((*a)->value > min) && ((*a)->value < max)))
 		{
 			ft_rotate_handler_less_max(a, b, commands);
 			continue ;

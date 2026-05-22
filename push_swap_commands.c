@@ -68,14 +68,15 @@ int	ft_execute(char *c, t_stack **a, t_stack **b, t_command *comms)
 		{
 			comms[i].func(a, b);
 
-			//printf("stack a\n");
+			// printf("stack a\n");
 			//printf("disorder value [%d]\n", ft_compute_disorder(*a));
-			//ft_print_stack(*a);
-			//printf("stack b\n");
+			// ft_print_stack(*a);
+			// printf("stack b\n");
+			// printf("\n");
 			//printf("disorder value [%d]\n", ft_compute_disorder(*b));
-			//ft_print_stack(*b);
+			// ft_print_stack(*b);
 			printf("%s\n", comms[i].name);
-			printf("\n");
+			// printf("\n");
 			cnt += 1;
 			printf("Miau, blyat' %d\n", cnt);
 			return (cnt);
